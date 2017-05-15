@@ -68,3 +68,9 @@ board_flash_mode = dio
 build_flags = -Wl,-Tesp8266.flash.1m0.ld -DMQTT_MAX_PACKET_SIZE=512
 lib_deps = PubSubClient, NeoPixelBus, IRremoteESP8266, ArduinoJSON
 ```
+
+So to wrap up:
+- board changed from esp01_1m to esp01
+- board_flash_mode changed from qio to dio
+
+The changes seem minimal and I still don't fully understand why but it worked.
