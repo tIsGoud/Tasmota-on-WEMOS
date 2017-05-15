@@ -1,2 +1,3 @@
-# tasmota-on-wemos
-Install Tasmota software on a WeMos D1 mini (pro) with PlatformIO 
+# Tasmota on WEMOS
+
+Install Tasmota software on a WEMOS D1 mini (pro) with PlatformIO. 
