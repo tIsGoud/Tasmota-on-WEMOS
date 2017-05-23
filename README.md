@@ -3,7 +3,7 @@
 Install Tasmota software on a WEMOS D1 mini (pro) with PlatformIO.
 
 I assume you are familiar with the [Sonoff-Tasmota software](https://github.com/arendst/Sonoff-Tasmota) by Theo Arends. To get started do read the [Sonoff-Tasmota wiki pages](https://github.com/arendst/Sonoff-Tasmota/wiki).
-This page is merely to help those who are trying to get the Sonoff-Tasmota running on a WeMos D1 min (pro) board.
+This page is merely to help those who are trying to get the Sonoff-Tasmota software running on a WeMos D1 mini or [WeMos D1 mini pro](https://www.wemos.cc/product/d1-mini-pro.html) board.
 
 ## Requirements:
   - Serial drivers installed for your [WeMos board](https://www.wemos.cc/tutorial/get-started-arduino.html).
@@ -117,18 +117,18 @@ Build and run the software. Make sure there are no errors in compiling and uploa
 
 You can use a tool like fing or your wireless router to find the IP-address of your WeMos device.
 
+The MAC-address starts with:
+  - 5C:CF:7F for the WeMos D1 mini and
+  - 60:01:94 for the WeMos D1 mini Pro
+
 Open a browser and go to the IP-address of your WeMos device. You should be greeted with the familiar Tasmota configuration screen.
 
 Set the device to "WeMos D1 mini" in the Configuration and save the configuration.
 The device will reset, just wait for it to return.
 
-I added the DHT11 shield to my WeMos, to configure it we return to the Configuration screen.
+### WeMos pins vs ESP8266 pins
 
-Set GPIO2 to DHT11 like below:
-
-![WeMos DHT11 on GPIO2](img/Tasmota-DHT11-config.png)
-
-On the shield the DHT11 is connected to D4, this is connected to the GPIO2 on the ESP8266.
+The WeMos boards have a different pin layout than the ESP8266 layout used in the Tasmota software. The table below shows the correlation:
 
 | WeMos Pin | Function | ESP-8266 Pin |
 | --- | --- | --- |
@@ -149,6 +149,28 @@ On the shield the DHT11 is connected to D4, this is connected to the GPIO2 on th
 | 3V3 | 3.3V | 3.3V |
 | RST | Reset | RST |
 
+### WeMos DHT11 Shield
+
+![WeMos D1 mini with DHT11](img/WeMos-D1-mini_with_DHT11.jpg)
+
+To configure the DHT11 shield we return to the Configuration screen. The DHT11 uses D4 on the WeMos and therefore GPIO2 on the ESP8266.
+
+Set GPIO2 to DHT11 like below:
+
+![WeMos DHT11 on GPIO2](img/Tasmota-DHT11-config.png)
+
 After saving the configuration and the required reset we should see the following screen:
 
-![WeMos DHT11 info in the configuration page](img/Tasmota-webinterface.png)
+![WeMos DHT11 info in the configuration page](img/Tasmota-DHT11-webinterface.png)
+
+### WeMos Relay and Button Shield
+
+![WeMos D1 mini Pro with relay and button](img/WeMos-D1-mini-pro_with_relay_and_button.jpg)
+
+To configure the Relay and Button shield go to the Configuration screen. The Relay uses D1 on the WeMos and therefore GPIO5 on the ESP8266. The Button uses D3 on the WeMos, GPIO0 on the ESP8266.
+
+Set GPIO5 to Relay and the GPIO0 to the Button:
+
+![WeMos Relay on GPIO5 and Button on GPIO0](img/Tasmota-Relay_and_Button-config.png)
+
+Both the webinterface and the button can now be used to toggle the relais on and off.
