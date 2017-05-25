@@ -12,7 +12,7 @@ This page is merely to help those who are trying to get the Sonoff-Tasmota softw
 
 ## Software Versions
   - Sonoff-Tasmota v5.1.3
-  - PlatformIO v2.0.0-beta3
+  - PlatformIO IDE v2.0.0-beta3 | Core 3.4.0b3
 
 ## WeMos Hardware used
   - WeMos D1 mini v2.1.0
