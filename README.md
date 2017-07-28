@@ -6,7 +6,7 @@ I assume you are familiar with the [Sonoff-Tasmota software](https://github.com/
 This page is merely to help those who are trying to get the Sonoff-Tasmota software running on a WeMos D1 mini or [WeMos D1 mini pro](https://www.wemos.cc/product/d1-mini-pro.html) board.
 
 ## Requirements:
-  - Serial drivers installed for your [WeMos board](https://www.wemos.cc/tutorial/get-started-arduino.html).
+  - Serial drivers installed for your [WeMos board](https://wiki.wemos.cc/tutorials:get_started:get_started_in_arduino).
   - [PlatformIO](http://platformio.org/get-started/) installed.
   - Latest version of [Sonoff-Tasmota "Source code (zip)"](https://github.com/arendst/Sonoff-Tasmota/releases) downloaded and extracted.
 
